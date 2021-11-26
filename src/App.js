@@ -15,6 +15,11 @@ function App() {
       img: "",
       clicked: false,
     },
+    {
+      name: "Birman",
+      img: "",
+      clicked: false,
+    },
   ]);
   const [score, setScore] = useState(0);
   const [heighestScore, setHeighestScore] = useState(0);
@@ -31,7 +36,12 @@ function App() {
         <span>Highest Score: {heighestScore}</span>
         <span>Score: {score}</span>
       </div>
-      <List setScore={setScore} cards={cards} setCards={setCards} />
+      <List
+        setScore={setScore}
+        cards={cards}
+        setCards={setCards}
+        score={score}
+      />
     </div>
   );
 }

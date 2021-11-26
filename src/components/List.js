@@ -1,8 +1,8 @@
-import React, {useEffect} from "react";
+import React, { useEffect } from "react";
 //components
 import Card from "./Card";
 
-export default function List({ setScore, cards, setCards }) {
+export default function List({ setScore, cards, setCards, score }) {
   function handleClick(object) {
     let newArray = [...cards];
     let index = cards.findIndex((item) => item === object);
@@ -10,7 +10,7 @@ export default function List({ setScore, cards, setCards }) {
       //resets game if card is clicked twice
       console.log("game over");
       setScore(0);
-      let resetArray = newArray.map((cat) => ({...cat, clicked: false}));
+      let resetArray = newArray.map((cat) => ({ ...cat, clicked: false }));
       setCards(resetArray);
     } else if (newArray[index].clicked === false) {
       newArray[index].clicked = true;
@@ -18,7 +18,9 @@ export default function List({ setScore, cards, setCards }) {
       setCards(newArray);
     }
   }
-
+  useEffect(() => {
+    setCards((cards) => cards.sort(() => Math.random() - 0.5));
+  }, [score, setCards]);
   return (
     <div>
       {cards.map((card, index) => {
