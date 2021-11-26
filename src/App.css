@@ -15,17 +15,28 @@ img {
   height: 75px;
   background-color: #333;
   display: flex;
-  justify-content: space-between;
   padding: 20px;
   align-items: center;
+  justify-content: space-between;
   box-sizing: border-box;
   font-size: 20px;
   color: #eee;
 }
 .title {
   font-weight: bold;
-  margin-left:42%;
   font-size: 25px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 60%;
+}
+.gameOver{
+  font-weight: bold;
+  font-size: 25px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 55%;
 }
 .scores {
   display: flex;

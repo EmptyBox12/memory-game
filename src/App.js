@@ -63,6 +63,7 @@ function App() {
   ]);
   const [score, setScore] = useState(0);
   const [heighestScore, setHeighestScore] = useState(0);
+  const [gameOver, setGameOver] = useState(false);
 
   useEffect(() => {
     if (score > heighestScore) {
@@ -73,7 +74,7 @@ function App() {
   return (
     <div className="App">
       <div className="header">
-        <div className="title">Cat Breed Memory Game</div>
+        <div className={gameOver ? "gameOver" : "title"}>{gameOver ? "Game Over" : "Cat Breed Memory Game"}</div>
         <div className="scores">
           <span>Highest Score: {heighestScore}</span>
           <span>Score: {score}</span>
@@ -85,6 +86,8 @@ function App() {
           cards={cards}
           setCards={setCards}
           score={score}
+          setGameOver = {setGameOver}
+          gameOver= {gameOver}
         />
       </div>
       <div className="footer">Created by Ataberk Tümay</div>
