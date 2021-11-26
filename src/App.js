@@ -7,17 +7,57 @@ function App() {
   const [cards, setCards] = useState([
     {
       name: "British Shorthair",
-      img: "",
+      img: "./images/britishShorthair.jpg",
       clicked: false,
     },
     {
       name: "Ragdoll",
-      img: "",
+      img: "./images/ragdoll.jpg",
       clicked: false,
     },
     {
       name: "Birman",
-      img: "",
+      img: "./images/birman.jpg",
+      clicked: false,
+    },
+    {
+      name: "Scottish Fold",
+      img: "./images/scottishFold.jpg",
+      clicked: false,
+    },
+    {
+      name: "Maine Coon",
+      img: "./images/maineCoon.jpg",
+      clicked: false,
+    },
+    {
+      name: "Persian",
+      img: "./images/persian.jpg",
+      clicked: false,
+    },
+    {
+      name: "Turkish Van",
+      img: "./images/turkishVan.jpg",
+      clicked: false,
+    },
+    {
+      name: "Bombay",
+      img: "./images/bombayCat.jpg",
+      clicked: false,
+    },
+    {
+      name: "Calico",
+      img: "./images/calico.jpg",
+      clicked: false,
+    },
+    {
+      name: "Japanese Bobtail",
+      img: "./images/bobtail.jpg",
+      clicked: false,
+    },
+    {
+      name: "Munchkin",
+      img: "./images/munchkin.jpg",
       clicked: false,
     },
   ]);
@@ -32,16 +72,22 @@ function App() {
 
   return (
     <div className="App">
-      <div className="scores">
-        <span>Highest Score: {heighestScore}</span>
-        <span>Score: {score}</span>
+      <div className="header">
+        <div className="title">Cat Breed Memory Game</div>
+        <div className="scores">
+          <span>Highest Score: {heighestScore}</span>
+          <span>Score: {score}</span>
+        </div>
       </div>
-      <List
-        setScore={setScore}
-        cards={cards}
-        setCards={setCards}
-        score={score}
-      />
+      <div className= "content">
+        <List
+          setScore={setScore}
+          cards={cards}
+          setCards={setCards}
+          score={score}
+        />
+      </div>
+      <div className="footer">Created by Ataberk Tümay</div>
     </div>
   );
 }

@@ -22,8 +22,8 @@ export default function List({ setScore, cards, setCards, score }) {
     setCards((cards) => cards.sort(() => Math.random() - 0.5));
   }, [score, setCards]);
   return (
-    <div>
-      {cards.map((card, index) => {
+    <div className="gridContainer">
+      {cards.slice(0, 8).map((card, index) => {
         return <Card card={card} handleClick={handleClick} key={index} />;
       })}
     </div>
