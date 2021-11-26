@@ -1,3 +1,3 @@
 Cat Breeds Memory Game created using React.
 
-In development...
+Live preview: https://emptybox12.github.io/memory-game/
